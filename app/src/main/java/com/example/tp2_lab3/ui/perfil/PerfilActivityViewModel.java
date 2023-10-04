@@ -30,8 +30,4 @@ public class PerfilActivityViewModel extends ViewModel {
         this.clave = clave;
     }
 
-    public void guardarCambios() {
-        // Lógica para guardar los cambios en el backend o donde sea necesario
-        // Puedes acceder a los datos actualizados con las variables nombre, apellido, dni, email, clave
-    }
 }

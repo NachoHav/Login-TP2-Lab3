@@ -18,7 +18,7 @@ public class ApiClient {
 
         File archivo = new File(context.getFilesDir(), "personal.dat");
         try {
-            FileOutputStream fos = new FileOutputStream(archivo, false); // Modificado para sobrescribir los datos antiguos
+            FileOutputStream fos = new FileOutputStream(archivo, false);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(usuario);
             oos.flush();
@@ -33,7 +33,7 @@ public class ApiClient {
 
         File archivo = new File(context.getFilesDir(), "personal.dat");
         if (!archivo.exists()) {
-            return null; // Modificado para devolver null si el archivo no existe
+            return null;
         }
 
         Usuario usuarioRegistrado = null;
@@ -41,7 +41,7 @@ public class ApiClient {
         try {
             FileInputStream fis = new FileInputStream(archivo);
             ObjectInputStream ois = new ObjectInputStream(fis);
-            usuarioRegistrado = (Usuario) ois.readObject(); // Modificado para leer solo un usuario
+            usuarioRegistrado = (Usuario) ois.readObject();
             ois.close();
             fis.close();
         } catch (IOException | ClassNotFoundException e) {
